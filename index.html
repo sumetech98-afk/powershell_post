@@ -1,0 +1,823 @@
+<!-- ===== POWERSHELL BOOK POST - CYBERSUME FULL SCREEN BLACK EDITION ===== -->
+<!-- Isko Blogger Post Editor mein HTML mode mein paste karein -->
+
+<style>
+    /* ===== FULL SCREEN WRAPPER ===== */
+    .cyber-post-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 30px 40px 50px !important;
+        background: #000000 !important;
+        color: #ffffff;
+        border-radius: 0 !important;
+        box-sizing: border-box;
+    }
+    
+    /* ===== RESPONSIVE FULL SCREEN MARGINS ===== */
+    @media (max-width: 1200px) {
+        .cyber-post-wrapper {
+            padding: 25px 35px 45px !important;
+        }
+    }
+    
+    @media (max-width: 992px) {
+        .cyber-post-wrapper {
+            padding: 22px 30px 40px !important;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .cyber-post-wrapper {
+            padding: 18px 22px 35px !important;
+        }
+    }
+    
+    @media (max-width: 600px) {
+        .cyber-post-wrapper {
+            padding: 15px 18px 30px !important;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .cyber-post-wrapper {
+            padding: 12px 14px 25px !important;
+        }
+    }
+    
+    /* ===== CONTENT MAX WIDTH ===== */
+    .cyber-content {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    /* ===== POST HEADER ===== */
+    .post-header-cyber {
+        margin-bottom: 35px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid rgba(0, 255, 136, 0.08);
+        background: transparent;
+    }
+    
+    .post-badge {
+        display: inline-block;
+        padding: 6px 26px;
+        background: rgba(0, 255, 136, 0.08);
+        border: 1px solid #00ff88;
+        border-radius: 50px;
+        color: #00ff88;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+    }
+    
+    .post-title-cyber {
+        font-size: 40px;
+        font-weight: 900;
+        line-height: 1.15;
+        color: #ffffff !important;
+        margin: 12px 0 18px;
+        letter-spacing: -0.5px;
+    }
+    
+    .post-title-cyber strong {
+        color: #00ff88;
+    }
+    
+    @media (max-width: 992px) {
+        .post-title-cyber {
+            font-size: 32px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .post-title-cyber {
+            font-size: 26px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .post-title-cyber {
+            font-size: 22px;
+        }
+    }
+    
+    /* ===== FEATURED BOX ===== */
+    .featured-box {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 35px;
+        background: #0a0a0a !important;
+        border: 1px solid rgba(0, 255, 136, 0.12);
+        border-radius: 18px;
+        padding: 32px 38px;
+        margin: 25px 0 38px;
+        justify-content: center;
+    }
+    
+    @media (max-width: 768px) {
+        .featured-box {
+            flex-direction: column;
+            text-align: center;
+            padding: 25px 22px;
+            gap: 22px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .featured-box {
+            padding: 20px 16px;
+        }
+    }
+    
+    .featured-image {
+        flex-shrink: 0;
+    }
+    
+    .featured-image img {
+        max-width: 220px;
+        height: auto;
+        border-radius: 14px;
+        border: 2px solid #00ff88;
+        transition: 0.3s;
+        background: #000000;
+    }
+    
+    .featured-image img:first-child {
+        max-width: 200px;
+    }
+    
+    .featured-image .download-btn-img {
+        max-width: 280px !important;
+        margin-top: 10px;
+        border: none !important;
+        border-radius: 10px !important;
+        transition: 0.3s;
+    }
+    
+    .featured-image .download-btn-img:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 30px rgba(0, 255, 136, 0.15);
+    }
+    
+    @media (max-width: 768px) {
+        .featured-image img {
+            max-width: 180px;
+        }
+        .featured-image .download-btn-img {
+            max-width: 240px !important;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .featured-image img {
+            max-width: 150px;
+        }
+        .featured-image .download-btn-img {
+            max-width: 200px !important;
+        }
+    }
+    
+    .featured-image img:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 40px rgba(0, 255, 136, 0.15);
+    }
+    
+    .featured-cta {
+        flex: 1;
+        text-align: center;
+    }
+    
+    .featured-cta p {
+        color: #b0b8c8 !important;
+        margin: 5px 0 12px !important;
+        font-size: 16px;
+    }
+    
+    .featured-cta .main-link {
+        display: inline-block;
+        padding: 15px 42px;
+        background: linear-gradient(135deg, #00ff88, #00cc77);
+        color: #000000 !important;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 16px;
+        text-decoration: none;
+        margin-top: 6px;
+        transition: all 0.3s ease;
+        letter-spacing: 0.5px;
+    }
+    
+    .featured-cta .main-link:hover {
+        transform: scale(1.04);
+        box-shadow: 0 0 35px rgba(0, 255, 136, 0.25);
+    }
+    
+    .featured-cta .small-note {
+        color: #6a7290 !important;
+        font-size: 13px;
+        margin-top: 12px !important;
+    }
+    
+    .image-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    /* ===== HEADINGS ===== */
+    .cyber-post-wrapper h2 {
+        color: #ffffff !important;
+        font-size: 28px;
+        font-weight: 800;
+        margin-top: 40px;
+        margin-bottom: 18px;
+        border-left: 5px solid #00ff88;
+        padding-left: 20px;
+        line-height: 1.3;
+    }
+    
+    .cyber-post-wrapper h2#why {
+        border-left-color: #00d9ff;
+    }
+    
+    .cyber-post-wrapper h2#learn {
+        border-left-color: #ffcc00;
+    }
+    
+    .cyber-post-wrapper h2#designed {
+        border-left-color: #ff6b6b;
+    }
+    
+    .cyber-post-wrapper h2#projects {
+        border-left-color: #00ff88;
+    }
+    
+    .cyber-post-wrapper h2#readers {
+        border-left-color: #00d9ff;
+    }
+    
+    .cyber-post-wrapper h2#start {
+        border-left-color: #ffcc00;
+    }
+    
+    @media (max-width: 992px) {
+        .cyber-post-wrapper h2 {
+            font-size: 26px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .cyber-post-wrapper h2 {
+            font-size: 24px;
+            padding-left: 16px;
+            margin-top: 35px;
+            margin-bottom: 16px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .cyber-post-wrapper h2 {
+            font-size: 20px;
+            padding-left: 14px;
+            margin-top: 28px;
+            margin-bottom: 14px;
+        }
+    }
+    
+    /* ===== PARAGRAPHS ===== */
+    .cyber-post-wrapper p {
+        color: #b0b8c8 !important;
+        font-size: 17px;
+        line-height: 1.95;
+        margin: 16px 0 20px;
+    }
+    
+    .cyber-post-wrapper p strong {
+        color: #00ff88;
+    }
+    
+    @media (max-width: 768px) {
+        .cyber-post-wrapper p {
+            font-size: 16px;
+            line-height: 1.85;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .cyber-post-wrapper p {
+            font-size: 15px;
+            line-height: 1.8;
+            margin: 14px 0 16px;
+        }
+    }
+    
+    /* ===== LISTS ===== */
+    .cyber-post-wrapper ul,
+    .cyber-post-wrapper ol {
+        color: #b0b8c8 !important;
+        font-size: 17px;
+        line-height: 2.3;
+        padding-left: 0;
+        margin: 14px 0 22px;
+        list-style: none;
+    }
+    
+    .cyber-post-wrapper ul li,
+    .cyber-post-wrapper ol li {
+        color: #b0b8c8 !important;
+        margin-bottom: 4px;
+        padding-left: 28px;
+        position: relative;
+    }
+    
+    .cyber-post-wrapper ul li::before {
+        content: "▸";
+        color: #00ff88;
+        position: absolute;
+        left: 0;
+        font-weight: 700;
+        font-size: 18px;
+    }
+    
+    .cyber-post-wrapper ol {
+        list-style: none;
+        counter-reset: item;
+    }
+    
+    .cyber-post-wrapper ol li {
+        counter-increment: item;
+        padding-left: 35px;
+    }
+    
+    .cyber-post-wrapper ol li::before {
+        content: counter(item) ".";
+        color: #00ff88;
+        position: absolute;
+        left: 0;
+        font-weight: 700;
+        font-size: 16px;
+    }
+    
+    @media (max-width: 480px) {
+        .cyber-post-wrapper ul,
+        .cyber-post-wrapper ol {
+            font-size: 15px;
+            line-height: 2.1;
+        }
+        .cyber-post-wrapper ul li,
+        .cyber-post-wrapper ol li {
+            padding-left: 24px;
+        }
+        .cyber-post-wrapper ol li {
+            padding-left: 30px;
+        }
+    }
+    
+    /* ===== TWO COLUMN LIST ===== */
+    .two-col-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4px 40px;
+        padding-left: 0 !important;
+        list-style: none !important;
+        margin: 14px 0 22px;
+    }
+    
+    .two-col-list li {
+        color: #b0b8c8 !important;
+        font-size: 16.5px;
+        line-height: 2.2;
+        padding: 4px 0;
+        padding-left: 28px;
+        position: relative;
+    }
+    
+    .two-col-list li::before {
+        content: "▸";
+        color: #00ff88;
+        position: absolute;
+        left: 0;
+        font-weight: 700;
+    }
+    
+    @media (max-width: 768px) {
+        .two-col-list {
+            grid-template-columns: 1fr 1fr;
+            gap: 2px 20px;
+        }
+        .two-col-list li {
+            font-size: 15px;
+            padding-left: 24px;
+        }
+    }
+    
+    @media (max-width: 600px) {
+        .two-col-list {
+            grid-template-columns: 1fr;
+            gap: 2px;
+        }
+        .two-col-list li {
+            font-size: 15px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .two-col-list li {
+            font-size: 14px;
+        }
+    }
+    
+    /* ===== HORIZONTAL RULE ===== */
+    .cyber-post-wrapper hr {
+        border: none;
+        border-top: 1px solid rgba(0, 255, 136, 0.06);
+        margin: 30px 0 32px;
+        background: transparent;
+        height: 1px;
+    }
+    
+    /* ===== SHARE SECTION ===== */
+    .share-section {
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(0, 255, 136, 0.08);
+    }
+    
+    .share-section p {
+        color: #6a7290 !important;
+        font-size: 15px;
+        text-align: center;
+        margin-bottom: 16px !important;
+    }
+    
+    .share-buttons {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .share-buttons a {
+        padding: 12px 28px;
+        border: 1px solid rgba(0, 255, 136, 0.12);
+        border-radius: 10px;
+        color: #b0b8c8 !important;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+        transition: 0.3s;
+        background: transparent;
+    }
+    
+    .share-buttons a:hover {
+        border-color: #00ff88;
+        color: #00ff88 !important;
+        background: rgba(0, 255, 136, 0.04);
+        transform: translateY(-2px);
+    }
+    
+    @media (max-width: 480px) {
+        .share-buttons a {
+            padding: 10px 18px;
+            font-size: 13px;
+        }
+        .share-section {
+            margin-top: 35px;
+            padding-top: 22px;
+        }
+    }
+    
+    /* ===== BOOK HIGHLIGHT BOX ===== */
+    .book-highlight {
+        background: linear-gradient(135deg, rgba(0, 255, 136, 0.05), rgba(0, 217, 255, 0.05));
+        border: 1px solid rgba(0, 255, 136, 0.1);
+        border-radius: 14px;
+        padding: 24px 30px;
+        margin: 20px 0 25px;
+        text-align: center;
+    }
+    
+    .book-highlight p {
+        margin: 5px 0 !important;
+        font-size: 16px;
+    }
+    
+    .book-highlight .highlight-title {
+        color: #00ff88;
+        font-weight: 700;
+        font-size: 18px;
+    }
+    
+    @media (max-width: 480px) {
+        .book-highlight {
+            padding: 18px 16px;
+        }
+        .book-highlight p {
+            font-size: 14px;
+        }
+        .book-highlight .highlight-title {
+            font-size: 16px;
+        }
+    }
+    
+    /* ===== AUTHOR BOX ===== */
+    .author-box {
+        background: rgba(0, 255, 136, 0.03);
+        border: 1px solid rgba(0, 255, 136, 0.08);
+        border-radius: 14px;
+        padding: 20px 28px;
+        margin: 20px 0 25px;
+        text-align: center;
+    }
+    
+    .author-box .author-name {
+        color: #00ff88;
+        font-weight: 700;
+        font-size: 20px;
+    }
+    
+    .author-box p {
+        margin: 5px 0 !important;
+        font-size: 15px;
+    }
+    
+    @media (max-width: 480px) {
+        .author-box {
+            padding: 16px 16px;
+        }
+        .author-box .author-name {
+            font-size: 17px;
+        }
+        .author-box p {
+            font-size: 14px;
+        }
+    }
+    
+    /* ===== BLOGGER OVERRIDES ===== */
+    .blog-posts {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+    
+    .post-body {
+        padding: 0 !important;
+        background: #000000 !important;
+    }
+    
+    .post-body-content {
+        background: #000000 !important;
+        padding: 0 !important;
+    }
+    
+    .post-outer {
+        background: #000000 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+    
+    .post {
+        background: #000000 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+    
+    /* ===== INLINE CODE ===== */
+    .cyber-post-wrapper code {
+        background: #0a0a0a;
+        padding: 2px 12px;
+        border-radius: 4px;
+        color: #00ff88;
+        border: 1px solid rgba(0, 255, 136, 0.08);
+        font-size: 14.5px;
+        font-family: 'Courier New', monospace;
+    }
+    
+    @media (max-width: 480px) {
+        .cyber-post-wrapper code {
+            font-size: 13px;
+            padding: 1px 8px;
+        }
+    }
+    
+    /* ===== IMAGES ===== */
+    .cyber-post-wrapper img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        margin: 10px 0;
+        border: 1px solid rgba(0, 255, 136, 0.05);
+    }
+    
+    .separator {
+        clear: both;
+        text-align: center;
+    }
+</style>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="cyber-post-wrapper">
+
+    <div class="cyber-content">
+
+        <!-- ===== POST HEADER ===== -->
+        <div class="post-header-cyber">
+            <div class="post-badge">⚡ Automation Guide</div>
+            <h1 class="post-title-cyber">Master Windows Automation with <strong>PowerShell: The Complete Guide from Beginner to Advanced</strong></h1>
+        </div>
+
+        <!-- ===== INTRODUCTION ===== -->
+        <p>
+            In today's technology-driven world, automation has become an essential skill for IT professionals, system administrators, DevOps engineers, and even curious beginners. Repetitive manual tasks consume valuable time, increase the risk of errors, and make managing modern Windows environments more difficult than ever. That's where PowerShell comes in.
+        </p>
+        <p>
+            PowerShell is Microsoft's powerful command-line shell and scripting language designed to simplify system administration and automate complex tasks. Whether you're managing hundreds of computers, configuring cloud services, organizing files, or deploying applications, PowerShell provides the tools to work smarter—not harder.
+        </p>
+        <p>
+            If you've ever wanted to learn PowerShell but didn't know where to begin, <strong>PowerShell: The Complete Guide from Beginner to Advanced</strong> by <strong>Z B Sume</strong> is designed specifically for you.
+        </p>
+
+        <!-- ===== FEATURED IMAGES WITH AMAZON LINK ===== -->
+        <div class="featured-box">
+            <div class="featured-image">
+                <div class="image-group">
+                    <a href="https://www.amazon.com/dp/B0H94TBYJC" target="_blank" rel="noopener">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgyo0JOOFnej7DmGYxjHwiX6xqqN8Wb42CMUCuJJXQsp2zTRRgEAjwbh2b0uqwWbvXy1LuTEGtyV5AHrjxcnKKyV1hqqMecKEnLpW-3AQmvOcLjpFh1uIsg6xvjKjBhqJPHiFq2e3oSTsS-mOJxk0mT9xyzsquA-yRh10SEfW2sPiq9XuOCMVeYtaS43IEC/s320/image.png" 
+                             alt="PowerShell Complete Guide Book"/>
+                    </a>
+                    <a href="https://www.amazon.com/dp/B0H94TBYJC" target="_blank" rel="noopener">
+                        
+                    </a>
+                </div>
+            </div>
+            <div class="featured-cta">
+                <p>📚 <strong style="color:#00ff88;">Get Your Copy Today!</strong></p>
+                <a class="main-link" href="https://www.amazon.com/dp/B0H94TBYJC" target="_blank" rel="noopener">
+                    🛒 Buy Now on Amazon
+                </a>
+                <p class="small-note">Click on the book image or button above</p>
+            </div>
+        </div>
+
+        <!-- ===== WHY LEARN ===== -->
+        <h2 id="why">💡 Why Learn PowerShell?</h2>
+        <p>
+            PowerShell is more than a command-line interface. It is a complete automation platform that allows users to interact with Windows, Microsoft 365, Azure, Active Directory, and countless other technologies. Unlike traditional command prompts, PowerShell works with objects rather than plain text, making it more powerful, flexible, and efficient.
+        </p>
+        <p>
+            <strong>Learning PowerShell can help you:</strong>
+        </p>
+        <ul>
+            <li>Automate repetitive administrative tasks</li>
+            <li>Save hours of manual work every week</li>
+            <li>Manage Windows systems more efficiently</li>
+            <li>Improve troubleshooting and reporting</li>
+            <li>Enhance your career opportunities in IT and DevOps</li>
+            <li>Build reusable scripts for everyday operations</li>
+        </ul>
+        <p>
+            As organizations continue to adopt cloud technologies and infrastructure automation, PowerShell remains one of the most valuable skills for IT professionals.
+        </p>
+
+        <hr/>
+
+        <!-- ===== WHAT YOU'LL LEARN ===== -->
+        <h2 id="learn">📖 What You'll Learn in This Book</h2>
+        <p>
+            This book follows a practical, step-by-step approach that makes learning simple, even if you've never written a script before.
+        </p>
+        <p>
+            <strong>Inside, you'll discover how to:</strong>
+        </p>
+        <ul class="two-col-list">
+            <li>Understand PowerShell fundamentals</li>
+            <li>Use cmdlets and pipelines effectively</li>
+            <li>Work with variables, arrays, and functions</li>
+            <li>Create reusable automation scripts</li>
+            <li>Handle errors like a professional</li>
+            <li>Manage files, folders, services, and processes</li>
+            <li>Automate Active Directory administration</li>
+            <li>Use PowerShell Remoting for remote management</li>
+            <li>Connect with REST APIs and web services</li>
+            <li>Work with JSON, XML, and CSV data</li>
+            <li>Manage Microsoft Azure and Microsoft 365</li>
+            <li>Apply scripting best practices for production environments</li>
+        </ul>
+        <p>
+            Each chapter includes practical examples that you can immediately apply in real-world situations.
+        </p>
+
+        <hr/>
+
+        <!-- ===== DESIGNED FOR ===== -->
+        <h2 id="designed">🎯 Designed for Beginners and Professionals</h2>
+        <p>
+            One of the biggest challenges when learning PowerShell is finding a resource that explains concepts clearly without assuming prior scripting knowledge. This guide bridges that gap by starting with the fundamentals before progressing to advanced scripting techniques.
+        </p>
+        <p>
+            Whether you're a student exploring automation, an IT support technician, a Windows administrator, or a DevOps engineer, this book provides a structured learning path that builds confidence with every chapter.
+        </p>
+
+        <!-- ===== BOOK HIGHLIGHT ===== -->
+        <div class="book-highlight">
+            <p class="highlight-title">⭐ From Zero to PowerShell Hero</p>
+            <p style="color:#b0b8c8;">No prior scripting experience required — Start from the basics and build real-world skills!</p>
+        </div>
+
+        <hr/>
+
+        <!-- ===== PRACTICAL PROJECTS ===== -->
+        <h2 id="projects">🛠️ Practical Learning Through Real Projects</h2>
+        <p>
+            Reading about scripting is helpful, but writing scripts is where real learning happens. That's why this book emphasizes hands-on practice with practical projects based on everyday administrative tasks.
+        </p>
+        <p>
+            You'll learn how to automate system maintenance, generate reports, manage users, schedule tasks, monitor services, process files, and streamline routine operations. These exercises reinforce key concepts while helping you build a portfolio of useful scripts.
+        </p>
+
+        <hr/>
+
+        <!-- ===== WHO SHOULD READ ===== -->
+        <h2 id="readers">👥 Who Should Read This Book?</h2>
+        <p>
+            <strong>This guide is ideal for:</strong>
+        </p>
+        <ul>
+            <li>Beginners learning PowerShell for the first time</li>
+            <li>Windows administrators</li>
+            <li>IT support professionals</li>
+            <li>Help desk engineers</li>
+            <li>DevOps engineers</li>
+            <li>Cloud administrators</li>
+            <li>Cybersecurity professionals</li>
+            <li>Students preparing for IT careers</li>
+        </ul>
+        <p>
+            If your work involves Windows systems or Microsoft technologies, PowerShell is a skill worth investing in.
+        </p>
+
+        <hr/>
+
+        <!-- ===== AUTHOR ===== -->
+        <div class="author-box">
+            <p class="author-name">✍️ Z B Sume</p>
+            <p style="color:#b0b8c8;">Author of PowerShell: The Complete Guide from Beginner to Advanced</p>
+            <p style="color:#6a7290;font-size:14px;">Helping thousands of IT professionals master automation</p>
+        </div>
+
+        <hr/>
+
+        <!-- ===== START AUTOMATING ===== -->
+        <h2 id="start">🚀 Start Automating Today</h2>
+        <p>
+            Automation is no longer a luxury—it's an essential part of modern IT. Learning PowerShell can help you work faster, reduce repetitive tasks, and improve your technical expertise.
+        </p>
+        <p>
+            <strong>PowerShell: The Complete Guide from Beginner to Advanced</strong> by <strong>Z B Sume</strong> offers a practical roadmap to mastering one of Microsoft's most powerful technologies. With clear explanations, hands-on examples, and real-world projects, you'll gain the confidence to automate tasks, manage systems efficiently, and take your IT skills to the next level.
+        </p>
+
+        <!-- ===== FINAL CTA ===== -->
+        <div class="book-highlight" style="border-color:#ffcc00;background:linear-gradient(135deg,rgba(255,204,0,0.05),rgba(0,255,136,0.05));">
+            <p class="highlight-title" style="color:#ffcc00;">🔥 Ready to Master PowerShell?</p>
+            <p style="color:#b0b8c8;font-size:16px;">
+                If you're ready to boost your productivity and build a valuable automation skill, this book is the perfect place to begin.
+            </p>
+            <br/>
+            <a class="main-link" href="https://www.amazon.com/dp/B0H94TBYJC" target="_blank" rel="noopener" 
+               style="display:inline-block;padding:15px 42px;background:linear-gradient(135deg,#ffcc00,#ff9900);color:#000000 !important;border-radius:10px;font-weight:700;font-size:16px;text-decoration:none;transition:all 0.3s ease;letter-spacing:0.5px;">
+                🛒 Buy Now on Amazon
+            </a>
+            <p class="small-note" style="color:#6a7290 !important;font-size:13px;margin-top:12px;">
+                Start your automation journey today — Get your copy now!
+            </p>
+        </div>
+
+        <hr/>
+
+        <!-- ===== SHARE SECTION ===== -->
+        <div class="share-section">
+            <p>📤 Share this book recommendation with your network</p>
+            <div class="share-buttons">
+                <a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Master%20Windows%20Automation%20with%20PowerShell%20-%20The%20Complete%20Guide%20from%20Beginner%20to%20Advanced!%20%23PowerShell%20%23Automation%20%23IT','_blank');return false;">
+                    🐦 Twitter
+                </a>
+                <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href),'_blank');return false;">
+                    📘 Facebook
+                </a>
+                <a href="#" onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(window.location.href),'_blank');return false;">
+                    💼 LinkedIn
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
